@@ -14,7 +14,7 @@ var urlEncoded = bodyParser.urlencoded({ extended: true });
 const VALID_ORIGINS = [/cbot-app\.com$/, /herokuapp\.com$/, /cbot1-api\.com$/];
 const corsOptions = {
   origin: VALID_ORIGINS,
-  credentials: true,
+  // credentials: true,
 };
 
 app.use(cors(corsOptions));
