@@ -11,7 +11,13 @@ const Gtts = require("gtts");
 var jsonParser = bodyParser.json();
 var urlEncoded = bodyParser.urlencoded({ extended: true });
 
-app.use(cors());
+const VALID_ORIGINS = [/cbot-app\.com$/, /cbot1-api\.com$/];
+const corsOptions = {
+  origin: VALID_ORIGINS,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(morgan("dev"));
 
 app.post("/chatbot", jsonParser, urlEncoded, function (req, res, next) {
