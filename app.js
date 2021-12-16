@@ -11,13 +11,13 @@ const Gtts = require("gtts");
 var jsonParser = bodyParser.json();
 var urlEncoded = bodyParser.urlencoded({ extended: true });
 
-const VALID_ORIGINS = [/cbot-app\.com$/, /herokuapp\.com$/, /cbot1-api\.com$/];
-const corsOptions = {
-  origin: VALID_ORIGINS,
-  credentials: true,
-};
+// const VALID_ORIGINS = [/cbot-app\.com$/, /herokuapp\.com$/, /cbot1-api\.com$/];
+// const corsOptions = {
+//   origin: VALID_ORIGINS,
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(morgan("dev"));
 
 app.post("/chatbot", jsonParser, urlEncoded, function (req, res, next) {
