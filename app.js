@@ -35,8 +35,7 @@ app.post("/chatbot", jsonParser, urlEncoded, function (req, res, next) {
 });
 
 app.get("/hear", function (req, res) {
-  const tld = "co.in";
-  const gtts = new Gtts(req.query.text, req.query.lang, tld);
+  const gtts = new Gtts(req.query.text, req.query.lang, req.query.tld);
   gtts.stream().pipe(res);
 });
 
