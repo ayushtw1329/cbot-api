@@ -1,1 +1,1 @@
-# cbot-api
+# chatbot-api
