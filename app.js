@@ -11,7 +11,11 @@ const Gtts = require("gtts");
 var jsonParser = bodyParser.json();
 var urlEncoded = bodyParser.urlencoded({ extended: true });
 
-const VALID_ORIGINS = [/cbot-app\.com$/, /cbot1-api\.com$/];
+const VALID_ORIGINS = [
+  /cbot-app\.com$/,
+  /cbot-app\.herokuapp$/,
+  /cbot1-api\.com$/,
+];
 const corsOptions = {
   origin: VALID_ORIGINS,
   credentials: true,
